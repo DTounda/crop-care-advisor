@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop Care Advisor</title>
+<meta name="description" content="Plan the care of everything you grow. One watering and pruning schedule, and warnings before you plant crops that will fight each other.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="server-badge" id="serverBadge" title="Which server answered this request">connecting</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Crop Care Advisor</h1>
+    <p class="tagline">Plan the care of everything you grow</p>
+    <p class="mission">
+      Looking up one plant is easy. Keeping track of five at once is not.
+      Add what you grow and this builds a single schedule for all of it,
+      then warns you when two of your crops need conditions that cannot
+      both be met in the same place.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="garden">My garden <span id="gardenCount" class="count">0</span></button>
+    <button class="tab-btn" data-tab="plan">This month's plan</button>
+    <button class="tab-btn" data-tab="find">Find plants</button>
+  </nav>
+
+  <div id="statusMessage" class="status-message" hidden></div>
+  <div id="loading" class="loading" hidden><span class="spinner"></span> Loading</div>
+
+  <!-- MY GARDEN -->
+  <section id="gardenTab">
+    <div class="section-intro">
+      <h2>What you are growing</h2>
+      <p>Add or remove crops at any time. Everything else updates automatically.</p>
+    </div>
+    <div id="gardenGrid" class="grid"></div>
+  </section>
+
+  <!-- PLAN -->
+  <section id="planTab" hidden>
+    <div class="section-intro">
+      <h2 id="planHeading">This month's plan</h2>
+      <p>Built from the care requirements of the crops in your garden.</p>
+    </div>
+    <div id="planContent"></div>
+  </section>
+
+  <!-- FIND -->
+  <section id="findTab" hidden>
+    <div class="panel">
+      <form id="searchForm" class="search-row">
+        <input type="text" id="searchInput" maxlength="60" placeholder="Search a crop, for example tomato, maize, beans">
+        <button type="submit">Search</button>
+      </form>
+
+      <div class="controls">
+        <label class="control">
+          <span>Sunlight</span>
+          <select id="filterSun">
+            <option value="">Any</option>
+            <option value="full_sun">Full sun</option>
+            <option value="part_shade">Part shade</option>
+            <option value="full_shade">Full shade</option>
+          </select>
+        </label>
+
+        <label class="control">
+          <span>Water needs</span>
+          <select id="filterWater">
+            <option value="">Any</option>
+            <option value="frequent">Frequent</option>
+            <option value="average">Average</option>
+            <option value="minimum">Minimum</option>
+          </select>
+        </label>
+
+        <label class="control">
+          <span>Life cycle</span>
+          <select id="filterCycle">
+            <option value="">Any</option>
+            <option value="annual">Annual</option>
+            <option value="perennial">Perennial</option>
+            <option value="biennial">Biennial</option>
+          </select>
+        </label>
+
+        <label class="control">
+          <span>Edible only</span>
+          <select id="filterEdible">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+          </select>
+        </label>
+
+        <label class="control">
+          <span>Sort</span>
+          <select id="sortBy">
+            <option value="name">Name A to Z</option>
+            <option value="nameDesc">Name Z to A</option>
+            <option value="water">Water needs</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="panel-actions">
+        <button type="button" id="resetBtn" class="ghost-btn">Reset</button>
+        <p class="hint">Leave the search box empty and use the filters alone to answer "what can I grow in these conditions".</p>
+      </div>
+    </div>
+
+    <p id="searchSummary" class="summary"></p>
+    <div id="searchGrid" class="grid"></div>
+  </section>
+
+</main>
+
+<div id="modalOverlay" class="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<footer>
+  <p>
+    Plant data provided by the
+    <a href="https://perenual.com/docs/api" target="_blank" rel="noopener">Perenual Plant API</a>.
+    All credit for the underlying dataset belongs to the Perenual API developers.
+  </p>
+  <p class="byline">Built by Dorcase Lesly Nana Tounda.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

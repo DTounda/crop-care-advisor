@@ -1,0 +1,16 @@
+{
+  "name": "crop-care-advisor",
+  "version": "1.0.0",
+  "description": "Crop Care Advisor: a planting and care planner that builds one combined schedule for everything you grow and warns you when two crops cannot share a bed.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Dorcase Lesly Nana Tounda",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0"
+  }
+}
