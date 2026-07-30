@@ -3,7 +3,7 @@
 Plan the care of everything you grow. Add multiple crops and get one combined care schedule instead of looking up each plant separately, plus a warning when two of your crops need conditions that cannot both be met in the same place.
 
 **Live site:** https://www.tounda.tech
-**Demo video:** ADD_LINK_HERE
+**Demo video:** _Being finalized — added here shortly. See submission comment for details on timing._
 
 ## Why this exists
 
