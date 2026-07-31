@@ -3,7 +3,8 @@
 Plan the care of everything you grow. Add multiple crops and get one combined care schedule instead of looking up each plant separately, plus a warning when two of your crops need conditions that cannot both be met in the same place.
 
 **Live site:** https://www.tounda.tech
-**Demo video:** _Being finalized — added here shortly. See submission comment for details on timing._
+
+**Demo video:**
 
 ## Why this exists
 
@@ -100,10 +101,6 @@ Run it several times in a row using fresh connections (a browser tab reusing one
 - Header casing through HAProxy: nginx returns X-Served-By in mixed case, but HAProxy lowercases it when proxying HTTPS traffic. A case-sensitive check made the load balancer look broken when it was actually working the whole time, fixed with a case-insensitive check instead.
 - Windows line endings and lost executable permissions: editing deployment scripts from PowerShell repeatedly reintroduced Windows-style line endings and reset git's executable bit, breaking scripts on the Linux servers. Fixed by doing all script creation and git operations from one WSL2 terminal instead of switching environments.
 - Different SSH keys per server: Web01, Web02, and Lb01 each required a different private key depending on when they were provisioned. Resolved by comparing key fingerprints against what each server actually accepted.
-
-## API key
-
-Provided separately in the assignment submission comment, per the assignment's instructions.
 
 ## Credits
 
