@@ -4,7 +4,7 @@ Plan the care of everything you grow. Add multiple crops and get one combined ca
 
 **Live site:** https://www.tounda.tech
 
-**Demo video:**
+**Demo video:** https://youtu.be/-hkheFu0Z0I
 
 ## Why this exists
 
